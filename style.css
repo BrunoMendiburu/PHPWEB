@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  gap: 30px;
+  background: #1d2b3a;
+}
+
+.loader {
+  position: relative;
+  left: -20px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: #44f340;
+  animation: blinkCursor 0.8s steps(3) infinite;
+}
+
+@keyframes blinkCursor {
+  0%,
+  75% {
+    opacity: 1;
+  }
+  76%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.loader h1 {
+  position: relative;
+  color: #000;
+  letter-spacing: 1px;
+  font-size: 4em;
+  width: 6ch;
+  text-transform: uppercase;
+  animation: typing 5s steps(6) infinite;
+  overflow: hidden;
+}
+
+@keyframes typing {
+  0%,
+  90%,
+  100% {
+    width: 0;
+  }
+  30%,
+  60% {
+    width: 6ch;
+  }
+}
+
+.inputBox {
+  position: relative;
+  width: 250px;
+}
+
+.inputBox input {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #1d2b3a;
+  outline: none;
+  color: #fff;
+  font-size: 1em;
+  margin-bottom: 30px;
+  transition: 0.5s;
+}
+
+.inputBox span {
+  position: absolute;
+  left: 0;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.25);
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span {
+  color: #fff;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.75em;
+  padding: 0 10px;
+  background: #1d2b3a;
+  border-left: 1px solid #44f340;
+  border-right: 1px solid #44f340;
+  letter-spacing: 0.2em;
+}
+
+.inputBox input:valid,
+.inputBox input:focus {
+  border: 1px solid #44f340;
+}
+
+input[type="submit"] {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #44f340;
+  background: #1d2b3a;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+h2 {
+  position: relative;
+  left: -20px;
+  color: red;
+  font-size: 17px;
+}
